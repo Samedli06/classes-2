@@ -119,7 +119,7 @@ namespace classes
                 while (true)
                 {
                     Console.Write("Enter Price: ");
-                    if (double.TryParse(Console.ReadLine(), out price))
+                    if (double.TryParse(Console.ReadLine(), out price) && price>0)
                         break;
                     else
                         Console.WriteLine("Invalid input for price. Please enter a valid number.");
@@ -129,7 +129,7 @@ namespace classes
                 while (true)
                 {
                     Console.Write("Enter Quantity: ");
-                    if (int.TryParse(Console.ReadLine(), out quantity))
+                    if (int.TryParse(Console.ReadLine(), out quantity) && quantity>0)
                         break;
                     else
                         Console.WriteLine("Invalid input for quantity. Please enter a valid number.");
@@ -197,7 +197,7 @@ namespace classes
                 Console.Write($"Enter the quantity to sell (Available: {productSell.GetQuantity()}): ");
                 int quantatySell = int.Parse(Console.ReadLine());
 
-                if (quantatySell <= productSell.GetQuantity())
+                if (quantatySell <= productSell.GetQuantity() && quantatySell>0 )
                 {
                     productSell.SetQuantity(productSell.GetQuantity() - quantatySell);
                     Console.WriteLine("sold successfullly");
